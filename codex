@@ -1,1 +1,28 @@
+# =====================================================================
+# SETA PROGRAMLAMA DİLİ - RESMİ PRO CODEX DOSYASI
+# GitHub Deposu: scptr1155-gif/test1155
+# =====================================================================
 
+[CONFIG]
+language = Seta
+version = 3.0-Pro
+encoding = utf-8
+
+[VALID_COMMANDS]
+# Pencere Ayarları
+window title "<pencere_basligi>"
+window bg "<hex_renk_kodu>"
+
+# Arayüz (UI) Elemanları
+create text "<metin_icerigi>"
+create input
+create button "<buton_etiketi>"
+
+[SYNTAX_RULES]
+comment_symbol = #
+rule_1 = Her komut yeni bir satırda yazılmalıdır.
+rule_2 = Metin içeren komutlar çift tırnak "" arasına yazılmalıdır.
+rule_3 = # ile başlayan satırlar yorum satırıdır ve yorumlayıcı tarafından yoksayılır.
+
+[DOCUMENTATION]
+# Bu codex dosyası Seta PRO IDE tarafından güncel komut kurallarını doğrulamak için kullanılır.
