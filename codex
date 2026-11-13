@@ -5,24 +5,29 @@
 
 [CONFIG]
 language = Seta
-version = 3.0-Pro
+version = 4.0-Pro
 encoding = utf-8
 
 [VALID_COMMANDS]
-# Pencere Ayarları
+# Pencere ve Görünüm Komutları
 window title "<pencere_basligi>"
 window bg "<hex_renk_kodu>"
+window icon "<dosya_yolu.ico>"
 
 # Arayüz (UI) Elemanları
 create text "<metin_icerigi>"
 create input
 create button "<buton_etiketi>"
 
+# Ağ ve GitHub Senkronizasyon Komutları
+connect seta "<github_raw_veya_url_adresi>"
+
 [SYNTAX_RULES]
 comment_symbol = #
 rule_1 = Her komut yeni bir satırda yazılmalıdır.
 rule_2 = Metin içeren komutlar çift tırnak "" arasına yazılmalıdır.
 rule_3 = # ile başlayan satırlar yorum satırıdır ve yorumlayıcı tarafından yoksayılır.
+rule_4 = connect seta komutu ile doğrudan URL adreslerinden veya GitHub Raw kaynaklarından veri/kod çekilebilir.
 
 [DOCUMENTATION]
 # Bu codex dosyası Seta PRO IDE tarafından güncel komut kurallarını doğrulamak için kullanılır.
