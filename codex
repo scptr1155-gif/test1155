@@ -5,7 +5,7 @@
 
 [CONFIG]
 language = Seta
-version = 4.0-Pro
+version = 5.0-Pro
 encoding = utf-8
 
 [VALID_COMMANDS]
@@ -19,6 +19,12 @@ create text "<metin_icerigi>"
 create input
 create button "<buton_etiketi>"
 
+# Uygulama ve Blok Yapısı Komutları
+create app
+app name "<uygulama_adi>"
+app open id "<benzersiz_id_kodu>"
+app end
+
 # Ağ ve GitHub Senkronizasyon Komutları
 connect seta "<github_raw_veya_url_adresi>"
 
@@ -27,7 +33,8 @@ comment_symbol = #
 rule_1 = Her komut yeni bir satırda yazılmalıdır.
 rule_2 = Metin içeren komutlar çift tırnak "" arasına yazılmalıdır.
 rule_3 = # ile başlayan satırlar yorum satırıdır ve yorumlayıcı tarafından yoksayılır.
-rule_4 = connect seta komutu ile doğrudan URL adreslerinden veya GitHub Raw kaynaklarından veri/kod çekilebilir.
+rule_4 = create app ile başlayan blok yapısı app end ile kapatılmalıdır.
+rule_5 = connect seta komutu ile doğrudan URL adreslerinden veya GitHub Raw kaynaklarından veri/kod çekilebilir.
 
 [DOCUMENTATION]
-# Bu codex dosyası Seta PRO IDE tarafından güncel komut kurallarını doğrulamak için kullanılır.
+# Bu codex dosyası Seta PRO IDE tarafından güncel komut kurallarını ve blok yapısını doğrulamak için kullanılır.
