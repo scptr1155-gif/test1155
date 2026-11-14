@@ -1,11 +1,11 @@
 # =====================================================================
-# SETA ULTIMATE - RESMİ PRO CODEX DOSYASI (V15.0)
+# SETA ULTIMATE - RESMİ PRO CODEX DOSYASI VE SİSTEM KILAVUZU (V20.0)
 # GitHub Deposu: scptr1155-gif/test1155
 # =====================================================================
 
 [CONFIG]
 language = Seta
-version = 15.0-Ultimate-Hybrid
+version = 20.0-System-Automation
 encoding = utf-8
 
 [VALID_COMMANDS]
@@ -18,22 +18,24 @@ app size "<genislikxyukseklik>"
 app opacity "<saydamlik_orani>"
 app end
 
-# 2. HTML Hibrit Motoru (Tamamen HTML/CSS/JS ile Arayüz)
+# 2. HTML Hibrit Motoru
 app html start
-# Burada doğrudan HTML, CSS veya JavaScript kodları çalıştırılabilir.
 app html end
 
-# 3. Gelişmiş Buton ve Köşe (Radius) / Stil Yönetimi
+# 3. Gelişmiş Buton ve Stil / Olay Yönetimi
 create button "Buton Metni"
 button radius "12px"
 button bg "#3b82f6"
 button fg "white"
 button click "mesaj:Merhaba" 
-# VEYA HTML parçasını tetiklemek için:
-button click "html_ac:html_blok_adi"
 
-# 4. Diğer Arayüz Bileşenleri
+# 4. SİSTEM VE OTOMASYON KOMUTLARI (YENİ)
+exec cmd "<calistirilacak_cmd_komudu>"
+exec powershell "<calistirilacak_ps_komudu>"
+exec startup "aktif"
+exec silent "<gizli_calisacak_komut>"
+
+# 5. Diğer Arayüz Bileşenleri
 create text "Metin İçeriği"
 create input
 create checkbox "Onay Kutusu"
-connect seta "<url>"
