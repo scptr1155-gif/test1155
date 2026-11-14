@@ -1,66 +1,39 @@
 # =====================================================================
-# SETA PROGRAMLAMA DİLİ - RESMİ PRO CODEX DOSYASI VE GENİŞLETİLMİŞ KILAVUZ
+# SETA ULTIMATE - RESMİ PRO CODEX DOSYASI (V15.0)
 # GitHub Deposu: scptr1155-gif/test1155
-# Bu dosya Seta PRO IDE tarafından bulut tabanlı kural doğrulama için kullanılır.
 # =====================================================================
 
-DIL_BILGISI = Seta Programlama Dili
-SURUM = 10.0-Ultimate
-KODLAMA = utf-8
-YAZAR = Seta Ekosistemi
+[CONFIG]
+language = Seta
+version = 15.0-Ultimate-Hybrid
+encoding = utf-8
 
---- YENİ NESİL 10 ÖZELLİK VE DETAYLI KOMUT SETİ ---
+[VALID_COMMANDS]
+# 1. Uygulama ve Blok Yapısı
+create app
+app name "<uygulama_adi>"
+app open id "<benzersiz_id>"
+app paint "<hex_renk>"
+app size "<genislikxyukseklik>"
+app opacity "<saydamlik_orani>"
+app end
 
-1. APP NAME (Uygulama Adı):
-   Kullanım: app name "Uygulama Adi"
-   Açıklama: Pencerenin üst kısmında görünecek ana başlığı belirler. İsteğe bağlıdır.
+# 2. HTML Hibrit Motoru (Tamamen HTML/CSS/JS ile Arayüz)
+app html start
+# Burada doğrudan HTML, CSS veya JavaScript kodları çalıştırılabilir.
+app html end
 
-2. APP OPEN ID (Tetiklenme Kimliği):
-   Kullanım: app open id "benzersiz_id_123"
-   Açıklama: Harici sistemlerden veya başka uygulamalardan istek geldiğinde bu uygulamanın tetiklenmesini sağlar.
+# 3. Gelişmiş Buton ve Köşe (Radius) / Stil Yönetimi
+create button "Buton Metni"
+button radius "12px"
+button bg "#3b82f6"
+button fg "white"
+button click "mesaj:Merhaba" 
+# VEYA HTML parçasını tetiklemek için:
+button click "html_ac:html_blok_adi"
 
-3. APP PAINT (Arka Plan Rengi):
-   Kullanım: app paint "#ef4444"
-   Açıklama: Pencerenin arka plan rengini HEX kodlarıyla tamamen özelleştirir.
-
-4. APP ICO (Pencere Simgesi):
-   Kullanım: app ico "dosya.ico"
-   Açıklama: Pencere sol üst köşesine ve görev çubuğuna özel simge atar.
-
-5. APP SIZE (Pencere Boyutu):
-   Kullanım: app size "600x500"
-   Açıklama: Uygulama penceresinin açılış genişlik ve yükseklik ölçülerini belirler.
-
-6. APP OPACITY (Pencere Saydamlığı):
-   Kullanım: app opacity "0.9"
-   Açıklama: Pencerenin şeffaflık derecesini (0.1 ile 1.0 arasında) ayarlar.
-
-7. CREATE TEXT (Metin Etiketi):
-   Kullanım: create text "Ekran Mesaji"
-   Açıklama: Arayüze alt alta yerleşen bilgilendirme metinleri ekler.
-
-8. CREATE INPUT (Veri Giriş Kutusu):
-   Kullanım: create input
-   Açıklama: Kullanıcıların klavyeden metin girebileceği interaktif alan oluşturur.
-
-9. CREATE CHECKBOX (Onay Kutusu):
-   Kullanım: create checkbox "Secenek Adi"
-   Açıklama: Kullanıcının işaretleyebileceği veya boş bırakabileceği onay kutusu ekler.
-
-10. CREATE BUTTON ve BUTTON CLICK (Buton ve Olay Yönetimi):
-    Kullanım: 
-    create button "Buton Yazisi"
-    button click "mesaj:Islem basariyla tamamlandi!"
-    VEYA
-    button click "ac:https://github.com"
-    VEYA
-    button click "dosya:not defteri"
-    Açıklama: Butona tıklandığında tetiklenecek özel eylemleri (mesaj gösterme, dosya/url açma, sistem komutu çalıştırma) tanımlar.
-
---- SÖZDİZİMİ VE YAZIM KURALLARI ---
-
-Kural 1: Her komut kesinlikle yeni bir satırda yazılmalıdır.
-Kural 2: Tüm metinsel değerler ve parametreler çift tırnak "" içerisine alınmalıdır.
-Kural 3: # simgesi ile başlayan satırlar yorum satırı olarak kabul edilir ve çalıştırılmaz.
-Kural 4: Uygulama kodları create app ile başlayıp app end ile sonlandırılmalıdır.
-Kural 5: Tüm uygulama yapılandırma komutları (app name, app paint vb.) isteğe bağlıdır, boş bırakılabilir.
+# 4. Diğer Arayüz Bileşenleri
+create text "Metin İçeriği"
+create input
+create checkbox "Onay Kutusu"
+connect seta "<url>"
