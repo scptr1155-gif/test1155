@@ -1,40 +1,66 @@
 # =====================================================================
-# SETA PROGRAMLAMA DİLİ - RESMİ PRO CODEX DOSYASI
+# SETA PROGRAMLAMA DİLİ - RESMİ PRO CODEX DOSYASI VE GENİŞLETİLMİŞ KILAVUZ
 # GitHub Deposu: scptr1155-gif/test1155
+# Bu dosya Seta PRO IDE tarafından bulut tabanlı kural doğrulama için kullanılır.
 # =====================================================================
 
-[CONFIG]
-language = Seta
-version = 7.0-Pro
-encoding = utf-8
+DIL_BILGISI = Seta Programlama Dili
+SURUM = 10.0-Ultimate
+KODLAMA = utf-8
+YAZAR = Seta Ekosistemi
 
-[VALID_COMMANDS]
-# Uygulama Blok ve Özellik Yapısı (Tüm alanlar isteğe bağlıdır/boş bırakılabilir)
-create app
-app name "<uygulama_adi>"
-app open id "<benzersiz_id_kodu>"
-app paint "<hex_renk_kodu>"
-app ico "<dosya_yolu.ico>"
-app size "<genislikxyukseklik>"
-app end
+--- YENİ NESİL 10 ÖZELLİK VE DETAYLI KOMUT SETİ ---
 
-# Arayüz (UI) Elemanları
-create text "<metin_icerigi>"
-create input
-create button "<buton_etiketi>"
-create checkbox "<onay_kutusu_metni>"
+1. APP NAME (Uygulama Adı):
+   Kullanım: app name "Uygulama Adi"
+   Açıklama: Pencerenin üst kısmında görünecek ana başlığı belirler. İsteğe bağlıdır.
 
-# Ağ ve GitHub Senkronizasyon Komutları
-connect seta "<github_raw_veya_url_adresi>"
+2. APP OPEN ID (Tetiklenme Kimliği):
+   Kullanım: app open id "benzersiz_id_123"
+   Açıklama: Harici sistemlerden veya başka uygulamalardan istek geldiğinde bu uygulamanın tetiklenmesini sağlar.
 
-[SYNTAX_RULES]
-comment_symbol = #
-rule_1 = Her komut yeni bir satırda yazılmalıdır.
-rule_2 = Metin içeren komutlar çift tırnak "" arasına yazılmalıdır.
-rule_3 = # ile başlayan satırlar yorum satiridir ve yorumlayıcı tarafından yoksayılır.
-rule_4 = create app ile başlayan blok yapısı app end ile kapatılmalıdır.
-rule_5 = Tüm app özellikleri isteğe bağlıdır; yazılmasa bile sistem varsayılan değerlerle çalışır.
-rule_6 = Yeni eklenen app size ile pencere boyutu, create checkbox ile onay kutusu oluşturulabilir.
+3. APP PAINT (Arka Plan Rengi):
+   Kullanım: app paint "#ef4444"
+   Açıklama: Pencerenin arka plan rengini HEX kodlarıyla tamamen özelleştirir.
 
-[DOCUMENTATION]
-# Bu codex dosyası Seta PRO IDE tarafından güncel komut kurallarını ve blok yapısını doğrulamak için kullanılır.
+4. APP ICO (Pencere Simgesi):
+   Kullanım: app ico "dosya.ico"
+   Açıklama: Pencere sol üst köşesine ve görev çubuğuna özel simge atar.
+
+5. APP SIZE (Pencere Boyutu):
+   Kullanım: app size "600x500"
+   Açıklama: Uygulama penceresinin açılış genişlik ve yükseklik ölçülerini belirler.
+
+6. APP OPACITY (Pencere Saydamlığı):
+   Kullanım: app opacity "0.9"
+   Açıklama: Pencerenin şeffaflık derecesini (0.1 ile 1.0 arasında) ayarlar.
+
+7. CREATE TEXT (Metin Etiketi):
+   Kullanım: create text "Ekran Mesaji"
+   Açıklama: Arayüze alt alta yerleşen bilgilendirme metinleri ekler.
+
+8. CREATE INPUT (Veri Giriş Kutusu):
+   Kullanım: create input
+   Açıklama: Kullanıcıların klavyeden metin girebileceği interaktif alan oluşturur.
+
+9. CREATE CHECKBOX (Onay Kutusu):
+   Kullanım: create checkbox "Secenek Adi"
+   Açıklama: Kullanıcının işaretleyebileceği veya boş bırakabileceği onay kutusu ekler.
+
+10. CREATE BUTTON ve BUTTON CLICK (Buton ve Olay Yönetimi):
+    Kullanım: 
+    create button "Buton Yazisi"
+    button click "mesaj:Islem basariyla tamamlandi!"
+    VEYA
+    button click "ac:https://github.com"
+    VEYA
+    button click "dosya:not defteri"
+    Açıklama: Butona tıklandığında tetiklenecek özel eylemleri (mesaj gösterme, dosya/url açma, sistem komutu çalıştırma) tanımlar.
+
+--- SÖZDİZİMİ VE YAZIM KURALLARI ---
+
+Kural 1: Her komut kesinlikle yeni bir satırda yazılmalıdır.
+Kural 2: Tüm metinsel değerler ve parametreler çift tırnak "" içerisine alınmalıdır.
+Kural 3: # simgesi ile başlayan satırlar yorum satırı olarak kabul edilir ve çalıştırılmaz.
+Kural 4: Uygulama kodları create app ile başlayıp app end ile sonlandırılmalıdır.
+Kural 5: Tüm uygulama yapılandırma komutları (app name, app paint vb.) isteğe bağlıdır, boş bırakılabilir.
