@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+.env*.local
+*.pem
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+.vercel

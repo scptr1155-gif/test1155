@@ -1,0 +1,30 @@
+:root {
+  --bg: #1e1e1e;
+  --card: #2d2d2d;
+  --line: #383838;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+  --accent: #4caf50;
+  --error: #e74c3c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; min-height: 100%; }
+.wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 36px 32px; width: 100%; max-width: 420px; text-align: center; }
+.logo { width: 84px; height: 84px; margin: 0 auto 16px; }
+h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: 1px; }
+p { color: var(--muted); line-height: 1.5; margin: 6px 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+  margin-top: 22px; padding: 13px 18px; border: 0; border-radius: 10px; font-size: 15px; font-weight: 600;
+  cursor: pointer; background: #fff; color: #222; transition: transform .08s, opacity .15s; }
+.btn:hover { opacity: .92; }
+.btn:active { transform: scale(.98); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn.accent { background: var(--accent); color: #fff; text-decoration: none; }
+.msg { margin-top: 18px; font-size: 14px; min-height: 20px; }
+.msg.err { color: var(--error); }
+.msg.ok { color: var(--accent); }
+.small { font-size: 12px; margin-top: 22px; }
+.btn.dark { background: #24292f; color: #fff; margin-top: 12px; border: 1px solid #444; }
